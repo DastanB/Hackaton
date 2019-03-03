@@ -53,3 +53,7 @@ class ProfileView(CreateView, LoginRequiredMixin):
         form.instance.user = self.request.user
         form.save()
         return super().form_valid(form)
+
+class ProfileListView(ListView, LoginRequiredMixin):
+    model = Profile
+    context_object_name = 'profiles'  
