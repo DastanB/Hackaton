@@ -19,3 +19,4 @@ class Profile(models.Model):
 class CommentProfile(models.Model):
     text = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='comments')
