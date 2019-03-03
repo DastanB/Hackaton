@@ -1,8 +1,67 @@
 {% extends 'base.html' %}
-
+{% load staticfiles%}
 {% block content %}
-
-    <h1>Log in</h1>
+    <div class="main-container">
+        <section class="space-sm">
+            <div class="container align-self-start">
+                <div class="row mb-5">
+                    <div class="col text-center">
+                        <a href="#">
+                            <img class="w-25" alt="Image" src="{% static 'assets/img/Logo_110cm.png' %}" />
+                        </a>
+                    </div>
+                    <!--end of col-->
+                </div>
+                <!--end of row-->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-7">
+                        <div class="card card-lg text-center">
+                            <div class="card-body">
+                                <div class="mb-5">
+                                    <h1 class="h2 mb-2">Здравствуйте!</h1>
+                                    <span>Войдите в свой аккаунт что бы продолжить</span>
+                                </div>
+                                <div class="row no-gutters justify-content-center">
+                                    <form action="{% url 'login' %}" method="post" class="text-left col-lg-8">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="login-email">Username</label>
+                                            <input class="form-control form-control-lg" type="text" name="username" id="login-email" placeholder="Email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="login-password">Пароль</label>
+                                            <input class="form-control form-control-lg" type="password" name="password" id="login-password" placeholder="Введите пароль" />
+                                            <small>Забыли пароль? <a href="#">Восствновить здесь</a>
+                                            </small>
+                                        </div>
+                                        <div>
+                                            <div class="custom-control custom-checkbox align-items-center">
+                                                <input type="checkbox" class="custom-control-input" value="box-1" name="box-1" checked id="check-remember">
+                                                <label class="custom-control-label text-small" for="check-remember">Запоминить меня?</label>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <button type="submit" class="btn btn-lg btn-primary">Войти</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--end of row-->
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-small">Нет аккаунта? <a href="#">Зарегестрироваться</a>
+                            </span>
+                        </div>
+                    </div>
+                    <!--end of col-->
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <!--end of section-->
+    </div>
+    <!-- <h1>Log in</h1>
 
     {% if error %}
         <h4 class="text-danger">{{ error }}</h4>
@@ -17,6 +76,6 @@
             <input type="password" name="password" class="form-control">
         </div>
         <input type="submit" class="btn btn-primary">
-    </form>
+    </form> -->
 
 {% endblock %}
