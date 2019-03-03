@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'authboss',
+    'auth_',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -111,7 +111,7 @@ LANGUAGE_CODE = 'ru_RU'
 
 TIME_ZONE = 'Asia/Almaty'
 
-AUTH_USER_MODEL = 'authboss.User'
+AUTH_USER_MODEL = 'auth.User'
 
 USE_I18N = True
 
